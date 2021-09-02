@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    margin: 1rem;
+    min-width:27vw;
+    min-height:70vh;
+ background-color:whitesmoke;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    border:1px solid black;
+    border-radius:1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow-y: auto;
+}
+.error{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:2rem;
+    color:black;
+    text-align:center;
+}
+.input{
+padding:2rem 1rem 1rem 1rem;
+width:100%;
+height:65%;
+position: relative;
+}
+#place{
+    height:2.3rem;
+    width:100%;
+    border:2px solid #3d5a80 ;
+    outline: none;
+    border-radius:1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    padding:1rem 2.7rem 1rem 1rem;
+    font-size:1.2rem;
+    color:#003049;
+}
+#btn{
+    background-color:#fff;
+    position:absolute;
+    font-size:1.4rem;
+    top:41%;
+    right:8%;
+    border:none;
+    border-radius: 1rem;
+}
+#btn i{
+    color:#3d5a80;
+    cursor:pointer;
+}
+.output{
+    flex:1;
+    width:100%;
+    border-radius:1rem;
+    position: relative;
+overflow:hidden;
+}
+.wave {
+    position:absolute;
+    opacity: 0.3;
+    top: 60%;
+    left:-50%;
+    background: #2a6f97;
+    width: 50rem;
+    height: 50rem;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+    z-index: 1;
+}
+
+.wave.-three {
+    animation: drift 7000ms infinite linear;
+    z-index: 2 !important;
+    opacity: 0.2;
+}
+
+.wave.-two {
+    animation: drift 7000ms infinite linear;
+    opacity: 0.1;
+    z-index: 3 !important;
+}
+@keyframes drift {
+    from {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+.info {
+    position: absolute;
+    display: flex;
+    padding:0 0 2rem 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+.description{
+    font-weight: 600;
+    color:#14213d;
+    font-size: 1rem;
+    text-align: center;
+}
+.location,#area{
+    margin-top: 3.5rem;
+    text-align: center;
+    font-weight: 800;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.fa-street-view{
+    animation: rotates 3s  infinite ease alternate-reverse;
+}
+
+@keyframes rotates {
+    from {
+        transform: translateX(-0.5rem);
+    }
+   to {
+        transform: translateX(0.5rem);
+    }
+}
+
+#date {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: #57606f;
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.temp {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.wind_pressure,.coords{
+    text-align: center;
+    margin-top: 0.3rem;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #57606f;
+}
+.tempmin_max{
+    color:#14213d;
+    font-weight: 500;
+    margin-top: 0.3rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+#weathercon {
+    height: 25%;
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    animation: rotates1 2s  infinite ease alternate-reverse;
+}
+@keyframes rotates1 {
+    from {
+        transform: translateY(-0.25rem);
+    }
+   to {
+        transform: translateY(0rem);
+    }
+}
+
+#weathercon .fas {
+    position:absolute;
+    top:2%;
+    margin-bottom: 1.5rem;
+    font-size: 3.5rem;
+    animation: fas-anime 3s linear infinite alternate;
+}
+@media  screen and (max-height:510px) and (orientation:landscape) {
+    html{
+        font-size:85%;
+    }
+    .container{
+        width:100vh;
+    }
+}
+@media  screen and (max-height:420px) and (orientation:landscape) {
+    html{
+        font-size:70%;
+    }
+    .container{
+        width:70vw;
+    }
+}
+@media  screen and (max-height:320px) and (orientation:landscape) {
+    html{
+        font-size:50%;
+    }
+    .container{
+        width:70vw;
+    }
+}
+
